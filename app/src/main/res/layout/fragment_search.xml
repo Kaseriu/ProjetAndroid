@@ -6,17 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".ui.search.SearchFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
+    <SearchView
+        android:id="@+id/search_searchview"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_artistes"
+        android:text="Artistes"
+        android:textSize="19sp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/search_searchview"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_artists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_artistes"
+        tools:ignore="MissingConstraints"
+        />
+
+    <TextView
+        android:id="@+id/text_album"
+        android:text="Albums"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/search_artists"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_albums"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_album"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
